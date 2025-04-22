@@ -12,13 +12,11 @@ public class Main {
         // Задача 2
         clientOS = 0;
         int clientDeviceYear = 2015;
-        if (clientOS == 0) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientDeviceYear < 2015) {
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
@@ -29,12 +27,12 @@ public class Main {
         double year4 = year % 4;
         double year100 = year % 100;
         double year400 = year % 400;
-        if (year >= 1584) {
-            if ((year4 == 0 && year100 != 0) || year400 == 0) {
+        if (year <= 1584) {
+            System.out.println("Григорианский календарь был введён позже");
+        } else if ((year4 == 0 && year100 != 0) || year400 == 0) {
                 System.out.println(year + " год является високосным");
-            } else {
+        } else {
                 System.out.println(year + " год не является високосным");
-            }
         }
 
         // Задача 4
